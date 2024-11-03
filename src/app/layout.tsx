@@ -5,6 +5,7 @@ import Navbar from "./_components/navbar";
 import { cn } from "@/utils/helpers";
 
 import "./globals.css";
+import NavMask from "./_components/navMask";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -31,9 +32,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("antialiased", openSans.variable, manrope.variable)}
+      className={cn(
+        "antialiased scroll-smooth",
+        openSans.variable,
+        manrope.variable
+      )}
     >
-      <body>
+      <body className="relative">
+        <NavMask className="absolute top-0 right-0 -z-10" />
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />

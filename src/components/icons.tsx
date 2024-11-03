@@ -193,7 +193,7 @@ export const EyesIcon = (props: React.SVGProps<SVGSVGElement>) => {
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <g clip-path="url(#clip0_604_1519)">
+      <g clipPath="url(#clip0_604_1519)">
         <path
           d="M1.7749 12.6543C1.7749 12.6543 5.7749 4.6543 12.7749 4.6543C19.7749 4.6543 23.7749 12.6543 23.7749 12.6543C23.7749 12.6543 19.7749 20.6543 12.7749 20.6543C5.7749 20.6543 1.7749 12.6543 1.7749 12.6543Z"
           stroke="currentColor"

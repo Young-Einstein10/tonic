@@ -10,7 +10,7 @@ const Navbar = () => {
     <header className="py-14">
       <nav className="wrapper flex justify-between items-center">
         <div>
-          <Link href="/">
+          <Link href="/" className="relative">
             <Image src={Logo} alt="Boldo Logo" />
           </Link>
         </div>
@@ -37,7 +37,7 @@ const Navbar = () => {
           </li>
         </ul>
         <Button className="sm:hidden bg-transparent h-fit p-0">
-          <HamburgerIcon className="w-12 h-12" />
+          <HamburgerIcon className="w-10 h-10" />
         </Button>
       </nav>
     </header>

@@ -1,4 +1,5 @@
 import React from "react";
+import * as motion from "framer-motion/client";
 import Image, { StaticImageData } from "next/image";
 import Collaboration from "~/public/img/Rectangle_1270_3.png";
 import BlogCover1 from "~/public/img/Rectangle_1270_4.png";
@@ -14,6 +15,11 @@ import {
   AccordionTrigger,
   Button,
 } from "../../components/ui";
+import MotionBox from "@/components/motionBox";
+import {
+  FADE_IN_ANIMATION_SETTINGS,
+  FADE_UP_ANIMATION_VARIANTS,
+} from "@/utils/animation";
 
 interface BlogProps {
   title: string;
@@ -91,16 +97,22 @@ const BlogSection = () => {
     <div className="mb-[124px]">
       <div className="max-w-[842px] mx-auto mb-[79px] text-center">
         <p className="mb-3 text-xl text-gray leading-8">Our Blog</p>
-        <h2 className="text-4xl sm:text-5xl sm:leading-[72px] font-manrope">
+        <motion.h2
+          variants={FADE_UP_ANIMATION_VARIANTS}
+          className="text-4xl sm:text-5xl sm:leading-[72px] font-manrope"
+        >
           Value proposition accelerator product management venture
-        </h2>
+        </motion.h2>
       </div>
 
-      <div className="flex flex-col sm:flex-row gap-10 sm:gap-[50px] mb-[84px]">
+      <motion.div
+        variants={FADE_IN_ANIMATION_SETTINGS}
+        className="flex flex-col sm:flex-row gap-10 sm:gap-[50px] mb-[84px]"
+      >
         {blogPosts.map((blog) => (
           <BlogCard key={blog.title} blog={blog} />
         ))}
-      </div>
+      </motion.div>
 
       <div className="text-center">
         <Button variant="outline" size="lg" className="w-[219px]">
@@ -150,12 +162,15 @@ const AccordionSection = () => {
 const ValueProposition = () => {
   return (
     <section id="value-proposition" className="py-[120px]">
-      <div className="wrapper max-w-[1100px] ">
-        <div className="mb-14">
+      <MotionBox className="wrapper max-w-[1100px] ">
+        <motion.div variants={FADE_IN_ANIMATION_SETTINGS} className="mb-14">
           <Image src={Collaboration} alt="Collaboration & Communication" />
-        </div>
+        </motion.div>
 
-        <div className="flex flex-col sm:flex-row gap-10 items-center justify-between mb-[158px]">
+        <motion.div
+          variants={FADE_UP_ANIMATION_VARIANTS}
+          className="flex flex-col sm:flex-row gap-10 items-center justify-between mb-[158px]"
+        >
           <div className="max-w-[500px]">
             <h4 className="text-[36px] leading-[56px] font-manrope">
               We connect our customers with the best, and help them keep up-and
@@ -164,10 +179,10 @@ const ValueProposition = () => {
           </div>
 
           <AccordionSection />
-        </div>
+        </motion.div>
 
         <BlogSection />
-      </div>
+      </MotionBox>
     </section>
   );
 };

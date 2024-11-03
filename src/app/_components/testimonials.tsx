@@ -2,6 +2,7 @@
 import Image, { StaticImageData } from "next/image";
 import React from "react";
 import { Button } from "@/components/ui";
+import * as motion from "framer-motion/client";
 import Ellipse1 from "~/public/img/Ellipse_4.png";
 import Ellipse2 from "~/public/img/Ellipse_4_1.png";
 import Ellipse3 from "~/public/img/Ellipse_4_2.png";
@@ -10,6 +11,8 @@ import { ArrowLeftIcon, ArrowRightIcon } from "@/components/icons";
 
 // Import Swiper styles
 import "swiper/css";
+import MotionBox from "@/components/motionBox";
+import { FADE_UP_ANIMATION_VARIANTS } from "@/utils/animation";
 
 interface TestimonialProps {
   review: string;
@@ -117,14 +120,20 @@ const TestimonialSection = () => {
       id="testimonials"
       className="bg-primary text-white pt-[100px] pb-[95px]"
     >
-      <div className="wrapper">
+      <MotionBox className="wrapper">
         <div className="max-w-[716px]">
-          <h2 className="text-4xl sm:text-5xl sm:leading-[72px] font-manrope mb-[72px]">
+          <motion.h2
+            variants={FADE_UP_ANIMATION_VARIANTS}
+            className="text-4xl sm:text-5xl sm:leading-[72px] font-manrope mb-[72px]"
+          >
             An enterprise template to ramp up your company website
-          </h2>
+          </motion.h2>
         </div>
 
-        <div className="relative pt-20 sm:pt-0">
+        <motion.div
+          variants={FADE_UP_ANIMATION_VARIANTS}
+          className="relative pt-20 sm:pt-0"
+        >
           <Navigation handlePrevious={handlePrevious} handleNext={handleNext} />
           <Swiper
             loop
@@ -152,8 +161,8 @@ const TestimonialSection = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
-      </div>
+        </motion.div>
+      </MotionBox>
     </section>
   );
 };

@@ -1,4 +1,6 @@
 import React from "react";
+import Image from "next/image";
+import Logo from "~/public/img/logo.svg";
 
 const Footer = () => {
   const footerMenus = [
@@ -60,7 +62,7 @@ const Footer = () => {
       <div className="wrapper flex flex-col sm:flex-row justify-between gap-10 sm:gap-0">
         <div className="flex flex-col max-w-[300px]">
           <div className="mb-10">
-            <img src="/img/logo.svg" alt="Boldo Logo" />
+            <Image src={Logo} alt="Boldo Logo" />
           </div>
 
           <p className="text-gray mb-16">

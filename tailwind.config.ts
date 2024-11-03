@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-sans)"],
+        manrope: ["var(--font-manrope)"],
       },
       colors: {
         primary: "var(--primary)",
