@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #0a2640;
+  --secondary: #65e4a3;
+  --gray: #777777;
+  --white: #ffffff;
+  --black: #000000;
+}
+
+@layer base {
+  .font-manrope {
+    @apply font-['Manrope'];
+  }
+
+  .wrapper {
+    @apply max-w-[1200px] mx-auto px-4 lg:px-8;
+  }
+}
+
+@layer utilities {
+  .paused {
+    animation-play-state: paused;
+  }
+}
+
+body {
+  color: var(--black);
+  background: var(--white);
+}
